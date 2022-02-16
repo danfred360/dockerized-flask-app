@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h1>Peek</h1>
+        <h2>View <a href="http://localhost:5000/system_info/">System Info</a> here</h2>
+        <br>
+        <h1>System Info</h1>
+        {% for key, value in context['system_info'].items() %}
+            <p>{{key}} -- {{value}}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
