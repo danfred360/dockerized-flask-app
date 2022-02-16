@@ -5,7 +5,7 @@ import socket
 import re
 import uuid
 import json
-import psutil
+#import psutil
 import logging
 import datetime
 import json
@@ -22,7 +22,7 @@ def get_system_info():
         info['ip-address'] = socket.gethostbyname(socket.gethostname())
         info['mac-address'] = ':'.join(re.findall('..', '%012x' % uuid.getnode()))
         info['processor'] = platform.processor()
-        info['ram'] = str(round(psutil.virtual_memory().total / 1024.0 **3)) + " GB"
+        #info['ram'] = str(round(psutil.virtual_memory().total / 1024.0 **3)) + " GB"
         # response = json.dumps(info)
     except Exception as e:
         logging.exception(e)
@@ -63,6 +63,6 @@ def system_info():
         logging.exception(e)
     return response, 200
 
-# if __name__ == "__main__":
-#     port = int(os.environ.get('PORT', 5000))
-#     app.run(debug=True, host='0.0.0.0', port=port)
+if __name__ == "__main__":
+     port = int(os.environ.get('PORT', 5000))
+     app.run(debug=True, host='0.0.0.0', port=port)

@@ -1,5 +1,5 @@
 # System Info
-psutil==5.9.0
+# psutil==5.9.0
 click==8.0.3
 colorama==0.4.4
 Flask==2.0.2
